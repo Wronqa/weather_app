@@ -15,21 +15,22 @@
 					<div class="box__title">
 						<span class="text-title">Aplikacja pogodowa</span>
 					</div>
-
 					<form action="" class="box-padding">
-						<select class="form__select">
+						<label class="text-description" for="city_select">Miasto:</label>
+						<select class="form__select" id="city_select">
 							<option hidden disabled selected value></option>
 							<option value="kielce">Kielce</option>
 							<option value="krakow">Kraków</option>
 							<option value="lublin">Lublin</option>
 						</select>
 						<button class="form__button">Wyszukaj</button>
+						<span class="form__error"> </span>
 					</form>
 				</div>
 
 				<div class="box box-spacing">
 					<div class="box__title">
-						<span class="text-title">Ostatnie wyszkuwanie</span>
+						<span class="text-title">Ostatnie wyszukiwanie</span>
 					</div>
 					<div class="forecast__content box-height"></div>
 				</div>
@@ -38,28 +39,28 @@
 
 		<template id="forecast__template">
 			<div class="forecast__main box-padding">
-				<img class="box__image" src="./assets/sunny.png" alt="" />
-				<span class="text-large text-thick" id="temperature">27&deg;C</span>
+				<img class="box__image" src="./assets/sunny.gif" alt="" />
+				<span class="text-large text-thick" id="temperature"></span>
 			</div>
 			<div class="forecast_details">
 				<div class="forecast__row">
-					<div class="forecast__column">
+					<div class="forecast__column no-bottom-border no-right-border">
 						<div class="text-description">Lokalizacja</div>
-						<div class="text-value text-thick" id="localisation">Kielce</div>
+						<div class="text-thick" id="localisation"></div>
 					</div>
-					<div class="forecast__column">
+					<div class="forecast__column no-bottom-border">
 						<div class="text-description">Ciśnienie</div>
-						<div class="text-value text-thick" id="pressure">1104Hpa</div>
+						<div class="text-thick" id="pressure"></div>
 					</div>
 				</div>
 				<div class="forecast__row">
-					<div class="forecast__column">
+					<div class="forecast__column no-right-border">
 						<div class="text-description">Data pomiaru:</div>
-						<div class="text-value text-thick" id="date">27.06.2023</div>
+						<div class="text-thick" id="date"></div>
 					</div>
 					<div class="forecast__column">
 						<div class="text-description">Suma opadów</div>
-						<div class="text-value text-thick" id="precipitation">22mm</div>
+						<div class="text-thick" id="precipitation"></div>
 					</div>
 				</div>
 			</div>

@@ -9,6 +9,6 @@ const getForecast = async (city) => {
 
 		return data;
 	} catch (err) {
-		console.log(err.message);
+		showError(err.message);
 	}
 };

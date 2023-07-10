@@ -5,7 +5,7 @@ const showError = (errorText) => {
 };
 
 const showData = (data) => {
-	document.querySelector('.result').innerHTML = `
+	document.querySelector('.forecast').innerHTML = `
 	</br>
 	<span> Data pomiaru: ${data.data_pomiaru} </span> <br/>
 	<span> Temperatura: ${data.temperatura} </span> <br/>

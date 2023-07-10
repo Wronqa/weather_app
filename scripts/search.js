@@ -19,6 +19,7 @@ window.onload = () => {
 if (searchBtn) {
 	searchBtn.addEventListener('click', async (e) => {
 		e.preventDefault();
+
 		const city = cityInput.value;
 
 		if (!city.trim().length) {
@@ -28,6 +29,7 @@ if (searchBtn) {
 		const data = await getForecast(city);
 
 		if (data) {
+			showError('');
 			localStorage.setItem('weatherData', JSON.stringify(data));
 			showData(data);
 		}

@@ -16,11 +16,12 @@
 		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .content {
+	min-width: 300px;
 	width: 30%;
 }
 .box {
 	border-radius: 10px;
-	background-color: #f8f8ff;
+	background-color: #fffff0f6;
 }
 .box-spacing {
 	margin-top: 30px;
@@ -72,6 +73,7 @@
 
 .text-description {
 	font-size: 0.9rem;
+	font-style: italic;
 	font-weight: 100;
 }
 
@@ -113,10 +115,19 @@
 	padding: 5px;
 }
 
+.no-bottom-border {
+	border-bottom: none;
+}
+
+.no-right-border {
+	border-right: none;
+}
+
 .form__error {
 	color: red;
 	font-size: 0.9rem;
 }
+
 .box__image {
 	width: 80px;
 }

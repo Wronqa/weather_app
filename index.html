@@ -6,7 +6,7 @@
 		<title>Weather app</title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="" />
+		<link rel="stylesheet" href="./styles/style.css" />
 	</head>
 	<body>
 		<div class="container">
@@ -16,6 +16,7 @@
 			<div class="content">
 				<form action="">
 					<select>
+						<option hidden disabled selected value> </option>
 						<option value="kielce">Kielce</option>
 						<option value="krakow">Kraków</option>
 						<option value="lublin">Lublin</option>
@@ -25,6 +26,7 @@
 				<div class="result"></div>
 			</div>
 		</div>
+		<script src="./scripts//helper.js""></script>
 		<script src="./scripts/api.js"></script>
 		<script src="./scripts/search.js"></script>
 	</body>

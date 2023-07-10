@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>Weather app</title>
+		<title>Aplikacja pogodowa</title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="./styles/style.css" />
@@ -11,53 +11,60 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="form">
-					<div class="formTitle">
-						<span>Aplikacja pogodowa</span>
+				<div class="box">
+					<div class="box__title">
+						<span class="text-title">Aplikacja pogodowa</span>
 					</div>
 
-					<form action="">
-						<select class="citySelector">
+					<form action="" class="box-padding">
+						<select class="form__select">
 							<option hidden disabled selected value></option>
 							<option value="kielce">Kielce</option>
 							<option value="krakow">Kraków</option>
 							<option value="lublin">Lublin</option>
 						</select>
-						<button>Wyszukaj</button>
+						<button class="form__button">Wyszukaj</button>
 					</form>
 				</div>
 
-				<div class="result">
-					<div class="formTitle"><span>Warunki pogodowe</span></div>
-					<div class="forecast">
-						<img src="./assets/sunny.png" alt="" />
-						<span class="temperature">27&deg;C</span>
+				<div class="box box-spacing">
+					<div class="box__title">
+						<span class="text-title">Ostatnie wyszkuwanie</span>
 					</div>
-					<div class="details">
-						<div class="row">
-							<div class="column">
-								<div class="top">Lokalizacja</div>
-								<div class="bottom">Kielce</div>
-							</div>
-							<div class="column">
-								<div class="top">Ciśnienie</div>
-								<div class="bottom">1104Hpa</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="column">
-								<div class="top">Data pomiaru:</div>
-								<div class="bottom">27.06.2023</div>
-							</div>
-							<div class="column">
-								<div class="top">Suma opadów</div>
-								<div class="bottom">22mm</div>
-							</div>
-						</div>
-					</div>
+					<div class="forecast__content box-height"></div>
 				</div>
 			</div>
 		</div>
+
+		<template id="forecast__template">
+			<div class="forecast__main box-padding">
+				<img class="box__image" src="./assets/sunny.png" alt="" />
+				<span class="text-large text-thick" id="temperature">27&deg;C</span>
+			</div>
+			<div class="forecast_details">
+				<div class="forecast__row">
+					<div class="forecast__column">
+						<div class="text-description">Lokalizacja</div>
+						<div class="text-value text-thick" id="localisation">Kielce</div>
+					</div>
+					<div class="forecast__column">
+						<div class="text-description">Ciśnienie</div>
+						<div class="text-value text-thick" id="pressure">1104Hpa</div>
+					</div>
+				</div>
+				<div class="forecast__row">
+					<div class="forecast__column">
+						<div class="text-description">Data pomiaru:</div>
+						<div class="text-value text-thick" id="date">27.06.2023</div>
+					</div>
+					<div class="forecast__column">
+						<div class="text-description">Suma opadów</div>
+						<div class="text-value text-thick" id="precipitation">22mm</div>
+					</div>
+				</div>
+			</div>
+		</template>
+
 		<script src="./scripts//helper.js"></script>
 		<script src="./scripts/api.js"></script>
 		<script src="./scripts/search.js"></script>

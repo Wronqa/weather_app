@@ -10,23 +10,55 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="navbar">
-				<h1>Weather app</h1>
-			</div>
 			<div class="content">
-				<form action="">
-					<select>
-						<option hidden disabled selected value> </option>
-						<option value="kielce">Kielce</option>
-						<option value="krakow">Kraków</option>
-						<option value="lublin">Lublin</option>
-					</select>
-					<button>Wyszukaj</button>
-				</form>
-				<div class="result"></div>
+				<div class="form">
+					<div class="formTitle">
+						<span>Aplikacja pogodowa</span>
+					</div>
+
+					<form action="">
+						<select class="citySelector">
+							<option hidden disabled selected value></option>
+							<option value="kielce">Kielce</option>
+							<option value="krakow">Kraków</option>
+							<option value="lublin">Lublin</option>
+						</select>
+						<button>Wyszukaj</button>
+					</form>
+				</div>
+
+				<div class="result">
+					<div class="formTitle"><span>Warunki pogodowe</span></div>
+					<div class="forecast">
+						<img src="./assets/sunny.png" alt="" />
+						<span class="temperature">27&deg;C</span>
+					</div>
+					<div class="details">
+						<div class="row">
+							<div class="column">
+								<div class="top">Lokalizacja</div>
+								<div class="bottom">Kielce</div>
+							</div>
+							<div class="column">
+								<div class="top">Ciśnienie</div>
+								<div class="bottom">1104Hpa</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column">
+								<div class="top">Data pomiaru:</div>
+								<div class="bottom">27.06.2023</div>
+							</div>
+							<div class="column">
+								<div class="top">Suma opadów</div>
+								<div class="bottom">22mm</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<script src="./scripts//helper.js""></script>
+		<script src="./scripts//helper.js"></script>
 		<script src="./scripts/api.js"></script>
 		<script src="./scripts/search.js"></script>
 	</body>

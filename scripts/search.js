@@ -2,13 +2,16 @@
 
 const cityInput = document.querySelector('select');
 const searchBtn = document.querySelector('button');
+const forecastBox = document.querySelector('.forecast__content');
 
 //Check if exist recent searching data
 
 window.onload = () => {
 	const recentData = localStorage.getItem('weatherData');
 
-	recentData && showData(JSON.parse(recentData));
+	recentData
+		? showData(JSON.parse(recentData))
+		: (forecastBox.textContent = 'Brak ostatnich wyszukiwań');
 };
 
 //Detect click on button

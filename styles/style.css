@@ -20,6 +20,7 @@
 	width: 30%;
 }
 .box {
+	border: none;
 	border-radius: 10px;
 	background-color: #fffff0f6;
 }

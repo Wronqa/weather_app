@@ -1,23 +1,43 @@
+const template = document.querySelector('#forecast__template');
+const errorBox = document.querySelector('.form__error');
+
+//Function to show error
+
 const showError = (errorText) => {
-	document.querySelector(
-		'form'
-	).innerHTML += `<span class="form__error"> ${errorText} </span>`;
+	errorBox.textContent = errorText;
 };
 
+//Function to show data
+
 const showData = (data) => {
-	const template = document.querySelector('#forecast__template');
-	template.content.querySelector('#localisation').textContent = data.stacja;
-	template.content.querySelector('#pressure').textContent = data.cisnienie;
-	template.content.querySelector('#date').textContent = data.data_pomiaru;
-	template.content.querySelector('#precipitation').textContent =
-		data.suma_opadu;
-	template.content.querySelector('#temperature').innerHTML =
-		data.temperatura.concat('&deg;C');
+	const {
+		stacja: city,
+		cisnienie: pressure,
+		data_pomiaru: date,
+		suma_opadu: precipitation,
+		temperatura: temperature,
+	} = data;
 
 	if (template) {
+		precipitation >= 2
+			? (template.content.querySelector('.box__image').src =
+					'./assets/rainy.gif')
+			: (template.content.querySelector('.box__image').src =
+					'./assets/sunny.gif');
+
+		template.content.querySelector('#localisation').textContent = city;
+		template.content.querySelector('#pressure').textContent = pressure;
+		template.content.querySelector('#date').textContent = date;
+		template.content.querySelector('#precipitation').textContent =
+			precipitation;
+		template.content.querySelector('#temperature').innerHTML =
+			temperature.concat('&deg;C');
+
 		const clone = template.content.cloneNode(true);
 
-		document.querySelector('.forecast__content').textContent = '';
-		document.querySelector('.forecast__content').appendChild(clone);
+		if (forecastBox) {
+			forecastBox.textContent = '';
+			forecastBox.appendChild(clone);
+		}
 	}
 };

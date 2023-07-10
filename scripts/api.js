@@ -1,5 +1,7 @@
 const apiUrl = 'https://danepubliczne.imgw.pl/api/data/synop/station/';
 
+//Api call to get forecast for current city with error handling
+
 const getForecast = async (city) => {
 	try {
 		const response = await fetch(apiUrl.concat(city));
@@ -9,6 +11,8 @@ const getForecast = async (city) => {
 
 		return data;
 	} catch (err) {
-		showError(err.message);
+		if (err.message) return showError(err.message);
+
+		return showError('Błąd połączenia');
 	}
 };

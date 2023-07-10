@@ -1,15 +1,23 @@
 const showError = (errorText) => {
 	document.querySelector(
-		'.result'
-	).innerHTML = `<span class="error"> ${errorText} </span>`;
+		'form'
+	).innerHTML += `<span class="form__error"> ${errorText} </span>`;
 };
 
 const showData = (data) => {
-	document.querySelector('.forecast').innerHTML = `
-	</br>
-	<span> Data pomiaru: ${data.data_pomiaru} </span> <br/>
-	<span> Temperatura: ${data.temperatura} </span> <br/>
-	<span> Suma opadu: ${data.suma_opadu} </span> <br/>
-	<span> ciśnienie: ${data.cisnienie} </span> <br/>
-	`;
+	const template = document.querySelector('#forecast__template');
+	template.content.querySelector('#localisation').textContent = data.stacja;
+	template.content.querySelector('#pressure').textContent = data.cisnienie;
+	template.content.querySelector('#date').textContent = data.data_pomiaru;
+	template.content.querySelector('#precipitation').textContent =
+		data.suma_opadu;
+	template.content.querySelector('#temperature').innerHTML =
+		data.temperatura.concat('&deg;C');
+
+	if (template) {
+		const clone = template.content.cloneNode(true);
+
+		document.querySelector('.forecast__content').textContent = '';
+		document.querySelector('.forecast__content').appendChild(clone);
+	}
 };

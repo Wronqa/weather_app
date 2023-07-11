@@ -21,9 +21,9 @@ const showData = (data) => {
 	if (template) {
 		precipitation >= 2
 			? (template.content.querySelector('.box__image').src =
-					'./assets/rainy.gif')
+					'./assets/rainy.png')
 			: (template.content.querySelector('.box__image').src =
-					'./assets/sunny.gif');
+					'./assets/sunny.png');
 
 		template.content.querySelector('#localisation').textContent = city;
 		template.content.querySelector('#pressure').textContent = pressure;
